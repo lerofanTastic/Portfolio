@@ -1,0 +1,149 @@
+@font-face {
+    font-family: "Tilda Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src:
+        url("./fonts/Tilda Sans/TildaSans-Regular.ttf") format("ttf");
+  }
+
+  @font-face {
+    font-family: "Tilda Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src:
+        url("./fonts/Tilda Sans/TildaSans-Bold.ttf") format("ttf");
+  }
+
+  .page{
+    height: 100%;
+  }
+
+  .page-body{
+    min-height: 100%;
+    margin: 0;
+    font-family: "Tilda Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #000;
+  }
+
+  .container{
+    width:1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+  }
+  
+  .page-header{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 ;
+    float: left;
+  }
+  
+  .navbar-list{
+    display: table; 
+    width: auto;
+    margin: 0 auto;
+    list-style: none;
+    font-size: 25px;
+    padding: 0;   
+  }
+  
+  .navbar-item:not(:last-child){  
+    float: left;  
+    margin-left: 100px;
+    left: 20%;  
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .navbar-item:last-child{
+    float: right;
+    margin-left: 530px;
+    text-align: center;
+  }
+  
+  .navbar-link{
+    display: inline-block;
+    text-align: center;
+    color:#000000;
+    text-decoration: none;
+  }
+
+  .navbar-btn{
+    text-decoration: none;
+    font-weight: bold;
+    color:orange;
+    border:3px solid orange;
+    border-radius: 10px 10px 10px 10px;
+    padding:5px;
+  }
+
+  .navbar-link:hover{
+    opacity: 0.5;
+  }
+
+  .intro{
+    padding-top: 150px;
+  }
+
+  .intro .container{
+    padding-right: 550px;
+  }
+
+  .intro-title {
+    margin:  0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .intro-text-wrapper p{
+    margin: 0;
+    padding-left: 500px;
+    padding-right: 500px;
+    text-align: center;
+  }
+
+  .intro-image-wrapper{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about{
+    padding-top: 150px;
+    background: linear-gradient(180deg, #08e8de 60%, #fff 40%);
+
+  }
+
+  .about-title{
+    margin:  0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .about-text-wrapper p{
+    margin: 0;
+    padding-left: 500px;
+    padding-right: 500px;
+    text-align: center;
+  }
+
+  .about-image-wrapper{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 500px;
+    border:3px solid orange;
+    border-radius: 10px 10px;
+    border-color: #08e8de;
+  }
