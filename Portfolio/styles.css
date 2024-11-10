@@ -143,7 +143,187 @@
     margin-right: auto;
     margin-top: 100px;
     width: 500px;
-    border:3px solid orange;
+    border:3px solid #08e8de;
     border-radius: 10px 10px;
-    border-color: #08e8de;
   }
+
+  .skills{
+    padding-top: 150px;
+  }
+
+  .skills-title {
+    margin:  0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .skills-subtitle {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .skills-microtitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
+  }
+
+  .skills-inform{
+    text-align: center;
+  }
+
+
+  .skills-table{
+    display: table;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #08e8de;
+    border-radius: 10px;
+  }
+
+  .skills-collumn{
+    height: 100px;
+    width: 33%;
+    border: 3px solid #08e8de;
+    display: table-cell;
+    padding: 20px;
+  }
+
+  .skills-image-wrapper{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project{
+    padding-top: 150px;
+  }
+
+  .project-title{
+    margin:  0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .project-table{
+    display: table;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-row{
+
+  }
+
+  .project-image-wrapper{
+    float:left;
+    height: 200px;
+    width: 300px;
+    border: 3px solid purple;
+    border-radius: 12px;
+    padding: 10px;
+    display:block;
+    margin-bottom: 20px;
+    margin-right: 20px;
+  }
+
+  .project-contact{
+    margin-top: 50px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .project-contact-href{
+    text-decoration: none;
+    font-weight: bold;
+    color:orange;
+    border:3px solid orange;
+    border-radius: 10px 10px 10px 10px;
+    padding:5px;
+  }
+
+  .byeme{
+    margin-top: 150px;
+    padding: 100px;
+    background: #08e8de;
+  }
+
+  .byeme-title{
+    margin:  0;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  .byeme-text-wrapper {
+    margin-top: 50px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact{
+    margin-top: 150px;
+  }
+
+  .contact-container{
+    display: flex;
+    gap: 200px;
+  }
+
+  .contact-input1{
+    border:3px solid orange;
+    border-radius: 10px 10px 10px 10px;   
+    width: 100%;
+    
+  }
+
+  .contact-input2{
+    border:3px solid orange;
+    border-radius: 10px 10px 10px 10px;   
+    width: 100%;
+    padding:220px;
+  }
+
+  .contact-button{
+    text-decoration: none;
+    font-weight: bold;
+    color:orange;
+    border:3px solid orange;
+    border-radius: 10px 10px 10px 10px;
+    padding-left:15px;
+    padding-right:15px;
+    background-color: #fff;
+    float:right;
+  }
+
+  .contact-form{
+    display: block;
+  }
+
+  .block{
+    display: block;
+    margin-right: 50px;
+    float: center;
+  }
+
+  .contact-form-row{
+    display: flex;
+  }
+  
+
+
