@@ -1,329 +1,848 @@
+ /***********************
+ * Шрифты *
+ ***********************/
 @font-face {
-    font-family: "Tilda Sans";
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src:
-        url("./fonts/Tilda Sans/TildaSans-Regular.ttf") format("ttf");
-  }
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Light.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Regular.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Medium.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 600;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Semibold.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 700;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Bold.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 800;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: TildaSans;
+  font-style: normal;
+  font-weight: 900;
+  src: url("../Portfolio//fonts/TildaSans/TildaSans-Black.ttf");
+}
 
-  @font-face {
-    font-family: "Tilda Sans";
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src:
-        url("./fonts/Tilda Sans/TildaSans-Bold.ttf") format("ttf");
-  }
+/**************************************
+* Отключение ненужного форматирования
+**************************************/
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  /* Отключаем подчеркивание сразу всех
+   * ссылок на странице и отключаем синий
+   * цвет текста. 
+   * Делаем это с помощью наследования цвета
+   * из родительского элемента. */
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  /* Отключаем фиолетовый цвет текста для
+   * посещенных ссылок, также, как и выше. */
+  text-decoration: none;
+  color: inherit;
+}
+button, input, textarea {
+  /* Стиль outline появляется не во всех браузерах. 
+   * Но очень портит внешний вид, там,
+   * где он включен. Поэтому отключаем его. */
+  outline: none;
+  appearance: none;
+}
+button:focus, input:focus, textarea:focus {
+  outline: none;
+}
 
-  .page{
-    height: 100%;
-  }
+/***************************************************
+* Цвета (комбинируются с другими классами) *
+***************************************************/
+.color-black {
+  /* черный цвет текста */
+  color: #141C3A;
+}
+.color-orange {
+  /* оранжевый цвет текста */
+  color: #FF9235;
+}
+.background-turquoise {
+  /* бирюзовый цвет фона */
+  background-color: #5dd9c8;
+}
 
-  .page-body{
-    min-height: 100%;
-    margin: 0;
-    font-family: "Tilda Sans", sans-serif;
-    font-size: 20px;
-    line-height: 1.4;
-    color: #000;
-  }
+/*****************************
+* Общие классы для разделов *
+*****************************/
+/* Задаем стили для всех элементов <section> в <main>. */
+.container {
+  /* Задаем ширину контейнера 100% от ширины экрана.
+   * Высота будет зависеть от высоты контента. */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .container{
-    width:1200px;
-    margin: 0 auto;
-    padding: 0 50px;
-    box-sizing: border-box;
-  }
-  
-  .page-header{
-    width: 100%;
-    text-align: center;
-    padding: 20px 0 ;
-    float: left;
-  }
-  
-  .navbar-list{
-    display: table; 
-    width: auto;
-    margin: 0 auto;
-    list-style: none;
-    font-size: 25px;
-    padding: 0;   
-  }
-  
-  .navbar-item:not(:last-child){  
-    float: left;  
-    margin-left: 100px;
-    left: 20%;  
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-  }
+/* Задаем стили для основных заголовков — заголовков каждого раздела страницы.
+* Все заголовки заданы через <h1>, но потенциально это может измениться.
+* Поэтому стилизуем их с помощью селектора по классу,
+* а не по самому тегу. */
+.big-header {
+  padding: 0;
+  margin: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  /* Рассчитываем ширину строки так: высота шрифта умножить на 1.5. 
+   * Это один из стандартных способов рассчитать правильную
+   * высоту строки. */
+  line-height: 81px;
+  text-align: center;
+  /* Все заголовки разделов страницы написаны заглавными буквами.
+   * Настраиваем такое отображение через свойство text-transform.
+   * Это правильнее и удобнее, чем набирать каждый раз заголовки капсом вручную. */
+  text-transform: uppercase;
+}
 
-  .navbar-item:last-child{
-    float: right;
-    margin-left: 530px;
-    text-align: center;
-  }
-  
-  .navbar-link{
-    display: inline-block;
-    text-align: center;
-    color:#000000;
-    text-decoration: none;
-  }
+/* Задаем стили шрифта для всех описаний в разделах сайта. */
+.desc-font {
+  font-family: "TildaSans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  text-align: center;
+}
 
-  .navbar-btn{
-    text-decoration: none;
-    font-weight: bold;
-    color:orange;
-    border:3px solid orange;
-    border-radius: 10px 10px 10px 10px;
-    padding:5px;
-  }
+/* Задаем изменения курсора (стрелочки на палец)
+* при наведении на любую кнопку страницы.
+* У всех элементов тега <a> это свойство
+* задается браузером по-умолчанию, а для
+* <button> его требуется задавать вручную. */
+button {
+  cursor: pointer;
+}
 
-  .navbar-link:hover{
-    opacity: 0.5;
-  }
+/*************************
+* Стили меню навигации *
+*************************/
+html {
+  /* Задаем плавную прокрутку при нажатии на ссылку с id элемента.
+   * Без этой настройки будет происходить мгновенное перемещение к этому элементу. */
+  scroll-behavior: smooth;
+}
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  /* Навбар состоит из двух частей: ссылок на разделы и кнопки.
+   * Выравниваем первую часть навбара (ссылки) по правому, 
+   * а не по левому краю с помощью justify-content: flex-end.
+   * Используется flex-end, так как отображение flex 
+   * по умолчанию — row, а не row-reverse. */
+  justify-content: flex-end;
+}
+nav ul {
+  /* Отключаем форматирование списка. Не отключаем его в начале
+   * вместе с другими стилями по умолчанию, т.к. на странице может появиться
+   * список, которому нужно оформление по умолчанию. */
+  list-style: none;
+  /* Делим навбар на три части: пустой отступ 25%,
+   * сама навигация 50% и контейнер для кнопки — 25%. */
+  width: 50%;
+  margin: 45px 0 45px 25%;
+  padding: 0;
+  /* Задаем ссылкам отображение display: flex как для контейнера-родителя 
+   * с кнопками навбара (элементами <li>). Это нужно для корректного выравнивания 
+   * их по ширине навбара. */
+  display: flex;
+  /* Задаем выравнивание ссылкам навбара.
+   * Направление Flexbox горизонтальное по умолчанию, поэтому 
+   * выравниваем элементы с помощью justify-content: space-around. 
+   * Так ссылки распределяются по всей ширине родителя.
+   * Используем space-around, а не space-between, чтобы сохранить
+   * отступ от кнопки справа на более узких экранах. 
+   * Если выбрать space-between, ссылки «прилипнут» к краям 
+   * контейнера-родителям и отступ от кнопки может стать очень маленьким. */
+  justify-content: space-around;
+  align-items: center;
+}
+/* Задаем стили для ссылок в навигации. */
+.nav-button {
+  font-family: "TildaSans", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+}
+/* Задаем стили для кнопки связаться в навбаре. */
+.contact-button {
+  border: 2px solid #ff9235;
+  padding: 9px 22px;
+  border-radius: 15px;
+  margin: 0;
+  /* Не задаем здесь свойство color здесь, так как 
+   * цвет задается классом color-orange */
+}
+.contact-button:hover {
+  background-color: #ff9235;  
+  /* Задаем стили для ховера кнопки. Цвет текста 
+   * в элементе задается через наследования цвета 
+   * от родительского элемента с классом color-orange (см. ниже). 
+   * Поэтому в ховере нужно задать другой цвет тексту через color.
+   * Специфичность псевдокласса hover выше, чем у наследуемого цвета.
+   * Поэтому при наведении курсора мыши на кнопку 
+   * цвет текста color-orange будет меняться на белый. */
+  color: #ffffff;
+}
+/* Задаем стили для текста внутри кнопки связаться */
+.contact-button-text {
+  font-family: "TildaSans", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 27px;
+  /* Задаем цвет текста через наследование 
+   * из родительского элемента contact-button. 
+   * Цвет у contact-button задается через общий класс
+   * с цветом color-orange. */
+  color: inherit;
+}
+.contact-button-container {
+  /* Про 25% см. выше (строка 174, селектор nav ul) */
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .intro{
-    padding-top: 150px;
-  }
+/**********************************
+* Стили классов секции «Главная» *
+**********************************/
+#main {
+  padding: 80px 0 0 0;
+}
+.main-desc {
+  width: 70%;
+  margin: 48px 0 0 0;
+  padding: 0;
+}
+.main-pic {
+  /* Задаем максимальную ширина картинки, чтобы
+   * она не вылезала за пределы экрана при уменьшении размера окна. 
+   * И при этом не растягивалась бы в случаях, когда 80%
+   * от ширины экрана — это больше, чем естественная ширина картинки.
+   * * * * * * * * * * * * * * * * * * * * * * * * *
+   * Высоту картинки не задаем, поскольку здесь для
+   * отображения это роли не играет.
+   * Если задан только один параметр (ширина или высота),
+   * второй будет рассчитан автоматически, 
+   * чтобы сохранить пропорции.
+   * * * * * * * * * * * * * * * * * * * * * * * * *
+   * Задаем ширину через относительную единицу vw,
+   * которая равна 1% ширины экрана.
+   * vw отличается от процента тем, что опирается
+   * на ширину окна, а не родительского элемента.
+   * Позволяет задавать высоту в процентах
+   * от ширины и наоборот. */
+  max-width: 80vw;
+  margin: 66px 0 0 0;
+  padding: 0;
+}
 
-  .intro .container{
-    padding-right: 550px;
-  }
+/**********************************
+* Стили классов секции «Обо мне» *
+**********************************/
+.about-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 75px 0 0 0;
+}
+.about-desc {
+  width: 70%;
+  margin: 40px 0 182px 0;
+  padding: 0;
+}
+.about-photo {
+  /* Для фотографии также используем относительную высоту и ширину,
+   * которые опираются на размеры окна.
+   * Это помогает сохранить корректное соотношение сторон (здесь 3:4)
+   * при изменении размера окна. 
+   * Проценты (%) не дают возможности сохранять правильное соотношение,
+   * т.к. опираются на размеры родительского элемента, а не окна. */
+  width: 30vw;
+  height: 40vw;
+  /* Добавляем отрицательный margin, чтобы фото заезжало на элемент выше.
+   * Задаем его также через vw, так как высота фото динамична и зависит
+   * от размера окна пользователя. 
+   * margin в таком случае тоже должен быть динамичным.
+   * Задаем margin так, чтобы изображение заезжало на элемент выше 
+   * примерно на 1/4 своей высоты. */
+  margin: -5vw 0 76px 0;
+  padding: 0;
+  border: 3px solid #5dd9c8;
+  border-radius: 10px;
+  /* Рамка картинки border и скругление углов указываются на контейнере для картинки,
+   * а не на самой картинке. 
+   * Поэтому нужно скрыть края картинки, которые могут 
+   * выступать за рамки скругления. 
+   * Для этого используем свойство overflow.
+   * Углы у самой картинки скруглять не стоит. Рамка здесь накладывается
+   * на родительский элемент, а не на саму картинку. 
+   * Если скруглить углы и у картинки тоже, то скругления рамки
+   * и картинки не совпадут. Это будет выглядеть плохо. */
+  overflow: hidden;
+}
+.about-photo img {
+  height: 100%;
+  width: 100%;
+  /* Обрезанием фото под нужный размер контейнера и центрируем
+   * изображение. 
+   * Делаем это с помощью object fit.
+   * Если его не указать, отображаться будет только левый верхний угол картинки, и размер
+   * картинки не будет подогнан под размеры контейнера. */
+  object-fit: cover;
+}
 
-  .intro-title {
-    margin:  0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-  }
+/****************************************
+* Стили классов секции "Навыки и стэк" *
+****************************************/
+#skills .big-header {
+  margin: 60px 0;
+}
+.skills-table {
+  width: 80%;
+  border-radius: 12px;
+  border: 1px solid #5dd9c8;
+  /* В этой секции используем grid, а не Flexbox.
+   * Именно grid позволяет наиболее точно оформить
+   * оранжевые подзаголовки. Выровнять их на одном уровне,
+   * несмотря на высоту текста над ними */
+  display: grid;
+  /* Задаем 3 колонки равной ширины. */
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 70px;
+}
+.skills-card {
+  border-left: 1px solid #5dd9c8;
+  /* Про выбор grid вместо flex см. выше. */
+  display: grid;
+  /* Задаем 2 строки равной высоты. */
+  grid-template-rows: 1fr 1fr;
+  padding: 70px;
+}
+.skills-card:first-child {
+  /* Убираем левую границу у первого элемента. */
+  border-left: 0px;
+}
+.skills-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.skills-card-icon {
+  width: 72px;
+  height: 72px;
+}
+.skills-card-header {
+  padding: 0;
+  margin: 25px 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 54px;
+  text-align: center;
+}
+.skills-card-text {
+  font-family: "TildaSans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 12px 0px;
+  width: 100%;
+}
+.skills-card-subheader {
+  padding: 0;
+  margin: 12px 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+}
+.skills-card-list {
+  /* Убираем маркеры у списка. */
+  list-style: none;
+  font-family: "TildaSans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 45px;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 32px 0;
+  width: 100%;
+}
+.skills-card-list:last-child {
+  /* Убираем нижний внутренний отступ у последнего элемента.
+   * Можно и вычесть его и из нижнего паддинга родительского элемента. */
+  padding-bottom: 0;
+}
 
-  .intro-text-wrapper p{
-    margin: 0;
-    padding-left: 500px;
-    padding-right: 500px;
-    text-align: center;
-  }
+/**********************************
+* Стили классов секции «Проекты» *
+**********************************/
+#projects .big-header {
+  margin: 70px 0;
+}
+.projects-display {
+  width: 80%;
+  display: flex;
+  /* Задаем flex-wrap, чтобы карточки были не в одну строку и их количество 
+   * можно было динамически менять. */
+  flex-wrap: wrap;
+  /* Задаем расстояние между карточками с помощью gap.
+   * Не используем здесь space-between, чтобы сохранить соотношение
+   * сторон скриншотов 16:9. */
+  gap: 2vw;
+  /* Центрируем карточки на случай, если количество карточек не будет кратно трем */
+  justify-content: center;
+}
+.projects-card {
+  padding: 0;
+  margin: 0;
+  /* Про использование vw, чтобы сохранить соотношения сторон, см. выше */
+  width: 24vw;
+  height: 13.5vw;
+  /* Используем box-sizing: border-box, чтобы толщина границ 
+   * учитывалась в размер карточки и flex-wrap
+   * работал корректно. */
+  box-sizing: border-box;
+  border: 3px solid #8063a6;
+  border-radius: 12px;
+  /* Про overflow: hidden 
+   * для скругления углов см. выше. */
+  overflow: hidden;
+}
+.projects-card img {
+  width: 100%;
+  height: 100%;
+  /* Про object-fit: cover 
+   * для скругления углов см. выше. */
+  object-fit: cover;
+}
+.projects-button {
+  padding: 15px 40px;
+  margin: 100px 0;
+  border: 2px solid #ff9235;
+  border-radius: 15px;
+}
+.projects-button:hover {
+  background-color: #ff9235;
+  color: #ffffff;
+}
+.projects-button-text {
+  font-family: "TildaSans", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  /* Про наследования цвета при hover и комбинировании классов см. выше. */
+  color: inherit;
+}
 
-  .intro-image-wrapper{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/*********************************
+* Стили классов секции с формой *
+*********************************/
+#form .big-header {
+  text-transform: none;
+  margin-bottom: 45px;
+}
+.form-details {
+  padding: 64px 0;
+}
+.form-details-text {
+  padding: 0;
+  margin: 0;
+}
+.form-pic {
+  /* Задаем размер картинки в зависимости от ширины 
+   * экрана, чтобы форма отображалась корректно на 
+   * более узких размерах окна.
+   * vw используется, чтобы сохранить соотношение сторон картинки. 
+   * Подробнее см. выше. */
+  width: 35vw;
+  height: 35vw;
+  margin-left: 5vw;
+}
+.form-container {
+  width: 100%;
+  padding: 100px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.form {
+  margin: 0 5vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-sender-data {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Убираем рамку, которая есть по умолчанию у элемента <fieldset>. */
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form-field {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.form-label {
+  margin: 0 0 10px 4px;
+  padding: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+}
+/* Задаем стили для полей формы input и textarea. */
+.form-input {
+  margin: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  border: 1px solid #FF9235;
+  border-radius: 12px;
+}
+/* Уточненяем стили для полей input, которые
+* находятся в контейнере с классом form-sender-data. */
+.form-sender-data .form-input {
+  min-width: 150px;
+  max-width: 20vw;
+  padding: 0 6px;
+}
+/* Используем псевдокласс first-child, чтобы добавить
+* отступ между полями ввода.
+* Поскольку их всего 2, задаем отступ первому элементу
+* в родительском контейнере. */
+.form-sender-data .form-field:first-child {
+  padding-right: 10px;
+}
+.form-text-body {
+  margin: 48px 0 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* Уточняем стили для textarea, который
+* находится в контейнере с классом form-text-body. */
+.form-text-body .form-input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+}
+.form-submit {
+  margin: 48px 0 0 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  /* Используем flex-end, чтобы выровнять кнопку по правому краю. */
+  justify-content: flex-end;
+}
+.form-button {
+  padding: 15px 40px;
+  margin: 0;
+  background-color: #ffffff;
+  border: 2px solid #ff9235;
+  border-radius: 15px;
+}
+.form-button:hover {
+  background-color: #ff9235;
+  color: #ffffff;
+}
+.form-button-text {
+  font-family: "TildaSans", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  /* Про inherit для наследования цвета 
+   * при hover и комбинировании классов см. выше. */
+  color: inherit;
+}
 
-  .about{
-    padding-top: 150px;
-    background: linear-gradient(180deg, #08e8de 60%, #fff 40%);
+/*********************************
+* Стили классов секции «Отзывы» *
+*********************************/
+#reviews .big-header {
+  margin: 64px 0;
+}
+.reviews-desc {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+}
+.reviews-card {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reviews-photo {
+  /* используем vw, чтобы сохранить соотношение 
+   * сторон картинки, подробнее см. выше. */
+  width: 20vw;
+  height: 15vw;
+  margin: 51px 0;
+  padding: 0;
+  border: 3px solid #5dd9c8;
+  border-radius: 10px;
+  /* Про overflow: hidden для корректного
+   * скругления углов см. выше. */
+  overflow: hidden;
+}
+.reviews-photo img {
+  height: 100%;
+  width: 100%;
+  /* Про object-fit: cover для корректного
+   * скругления углов см. выше. */
+  object-fit: cover;
+}
+.reviews-caption {
+  margin: 0;
+  padding: 0;
+}
+.reviews-text {
+  margin: 20px 0;
+  padding: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  text-align: center;
+}
+.reviews-info {
+  margin: 0;
+  padding: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+.reviews-toggle {
+  margin: 41px 0 45px 0;
+  /* Задаем конкретный размер кнопок, так как они не меняются 
+   * в зависимости от размера экрана. 
+   * В ширину включаем размер двух кнопок и отступ между ними.
+   * Задаем space-between, чтобы кнопки прижались к краям 
+   * родительского контейнера и между ними появился отступ. */
+  width: 138px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reviews-toggle-button {
+  padding: 0 6px;
+  height: 40px;
+  border: 2px solid #ff9235;
+  border-radius: 20px;
+  background: #ffffff;
+}
+.reviews-toggle-button:hover {
+  background-color: #ff9235;
+}
+/* Заменяем одну иконку на вторую, с другим
+* цветом при наведении. Подробнее см. HTML. */
+.reviews-toggle-button:hover .reviews-toggle-arrow {
+  display: none;
+}
+.reviews-toggle-button:hover .icon-hover {
+  display: block;
+}
 
-  }
+/*******************************************************
+* Стили классов секции «Договоримся о сотрудничестве» *
+*******************************************************/
+.letstalk-box {
+  /* Задаем отрицательный margin, чтобы создать наложение на предыдущую секцию. */
+  margin: 0;
+  padding: 12px 3vw;
+  background-color: #8063a6;
+  border-radius: 12px;
+  width: 80%;
+  /* Задаем фиксированную высоту, чтобы было проще настроить
+   * наложение секции на следующую. */
+  height: 166px;
+  /* Используем flex, чтобы отступы по краям и между элементами были одинаковыми. */
+  display: flex;
+  flex-direction: row;
+  /* gap равен горизонтальному padding */
+  gap: 3vw;
+}
+.letstalk-header {
+  margin: auto 0;
+  color: #ffffff;
+  font-family: "TildaSans", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 45px;
+  text-align: center;
+}
+.letstalk-text {
+  margin: auto 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: "TildaSans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+}
+.letstalk-button {
+  margin: 0;
+  padding: 15px 30px;
+  border: 2px solid #ffffff;
+  border-radius: 15px;
+  color: #ffffff;
+}
+.letstalk-button:hover {
+  background-color: #ffffff;
+  color: #8063a6;
+}
+.letstalk-button-text {
+  font-family: "TildaSans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: center;
+  /* Отключаем перенос, чтобы flexbox не переносил текст в кнопке. 
+   * Все элементы состоят из текста, который можно перенести, 
+   * но здесь нам это не нужно. Поэтому отключаем перенос. */
+  white-space: nowrap;
+ /* Про inherit для наследования цвета 
+   * при hover и комбинировании классов см. выше. */
+  color: inherit;
+}
+.letstalk-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .about-title{
-    margin:  0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-  }
+/************************
+* Стили классов футера *
+************************/
+footer {
+  /* Эффект наложения фиолетовой секции задаем с помощью 
+   * фиксированного отрицательного margin сверху.
+   * Для этого же добавляем положительный padding сверху такого же размера.
+   * Размер наложения — 1/2 высоты фиолетовой секции. */
+  margin: -95px 0 0 0;
+  padding: 95px 0 0 0;
+  background-color: #5dd9c8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-socials {
+  margin: 60px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.footer-social-container {
+  height: 48px;
+  width: 48px;
+  box-sizing: border-box;
+  margin: 0 15px;
+  padding: 4px;
+  border: 2px solid #141c3a;
+  border-radius: 48px;
+}
+.footer-social-container:hover {
+  background-color: #8063a6;
+  border: 2px solid #8063a6;
+}
+/* Задаем стили сразу двум иконкам разных цветов. 
+* Подробнее см. HTML-файл. */
+.footer-social-icon {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+.footer-social-container:hover .footer-social-icon {
+  display: none;
+}
+.icon-hover {
+  display: none;
+}
+.footer-social-container:hover .icon-hover {
+  display: block;
+}
+.footer-links {
+  margin: 30px 0 45px 0;
+  padding: 0;
+  font-family: "TildaSans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .about-text-wrapper p{
-    margin: 0;
-    padding-left: 500px;
-    padding-right: 500px;
-    text-align: center;
-  }
 
-  .about-image-wrapper{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 100px;
-    width: 500px;
-    border:3px solid #08e8de;
-    border-radius: 10px 10px;
-  }
-
-  .skills{
-    padding-top: 150px;
-  }
-
-  .skills-title {
-    margin:  0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-  }
-
-  .skills-subtitle {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .skills-microtitle{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: orange;
-  }
-
-  .skills-inform{
-    text-align: center;
-  }
-
-
-  .skills-table{
-    display: table;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid #08e8de;
-    border-radius: 10px;
-  }
-
-  .skills-collumn{
-    height: 100px;
-    width: 33%;
-    border: 3px solid #08e8de;
-    display: table-cell;
-    padding: 20px;
-  }
-
-  .skills-image-wrapper{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .project{
-    padding-top: 150px;
-  }
-
-  .project-title{
-    margin:  0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-  }
-
-  .project-table{
-    display: table;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .project-row{
-
-  }
-
-  .project-image-wrapper{
-    float:left;
-    height: 200px;
-    width: 300px;
-    border: 3px solid purple;
-    border-radius: 12px;
-    padding: 10px;
-    display:block;
-    margin-bottom: 20px;
-    margin-right: 20px;
-  }
-
-  .project-contact{
-    margin-top: 50px;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .project-contact-href{
-    text-decoration: none;
-    font-weight: bold;
-    color:orange;
-    border:3px solid orange;
-    border-radius: 10px 10px 10px 10px;
-    padding:5px;
-  }
-
-  .byeme{
-    margin-top: 150px;
-    padding: 100px;
-    background: #08e8de;
-  }
-
-  .byeme-title{
-    margin:  0;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-  }
-
-  .byeme-text-wrapper {
-    margin-top: 50px;
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact{
-    margin-top: 150px;
-  }
-
-  .contact-container{
-    display: flex;
-    gap: 200px;
-  }
-
-  .contact-input1{
-    border:3px solid orange;
-    border-radius: 10px 10px 10px 10px;   
-    width: 100%;
-    
-  }
-
-  .contact-input2{
-    border:3px solid orange;
-    border-radius: 10px 10px 10px 10px;   
-    width: 100%;
-    padding:220px;
-  }
-
-  .contact-button{
-    text-decoration: none;
-    font-weight: bold;
-    color:orange;
-    border:3px solid orange;
-    border-radius: 10px 10px 10px 10px;
-    padding-left:15px;
-    padding-right:15px;
-    background-color: #fff;
-    float:right;
-  }
-
-  .contact-form{
-    display: block;
-  }
-
-  .block{
-    display: block;
-    margin-right: 50px;
-    float: center;
-  }
-
-  .contact-form-row{
-    display: flex;
-  }
-  
 
 
