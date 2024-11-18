@@ -1,0 +1,45 @@
+ /***********************
+ * Шрифты *
+ ***********************/
+ @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Light.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 400;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Regular.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Medium.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 600;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Semibold.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 700;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Bold.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 800;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: TildaSans;
+    font-style: normal;
+    font-weight: 900;
+    src: url("../Portfolio//fonts/TildaSans/TildaSans-Black.ttf");
+  }
