@@ -6,8 +6,8 @@ footer {
      * фиксированного отрицательного margin сверху.
      * Для этого же добавляем положительный padding сверху такого же размера.
      * Размер наложения — 1/2 высоты фиолетовой секции. */
-    margin: -95px 0 0 0;
-    padding: 95px 0 0 0;
+    margin: -8.8vh 0 0 0;
+    padding: 8.8vh 0 0 0;
     background-color: #5dd9c8;
     display: flex;
     flex-direction: column;
@@ -15,19 +15,20 @@ footer {
     align-items: center;
   }
   .footer-socials {
-    margin: 60px 0;
+    margin: 5.55vh 0;
     padding: 0;
     display: flex;
     flex-direction: row;
   }
   .footer-social-container {
-    height: 48px;
-    width: 48px;
+    height: 4.44vh;
+    width: 2.5vw;
     box-sizing: border-box;
-    margin: 0 15px;
-    padding: 4px;
+    margin: 0 0.78vw;
+    padding: 0.37vh;
     border: 2px solid #141c3a;
-    border-radius: 48px;
+    border-radius: 4.44vh;
+    transition: all 200ms 0ms;
   }
   .footer-social-container:hover {
     background-color: #8063a6;
@@ -36,8 +37,8 @@ footer {
   /* Задаем стили сразу двум иконкам разных цветов. 
   * Подробнее см. HTML-файл. */
   .footer-social-icon {
-    height: 36px;
-    width: 36px;
+    height: 3.33vh;
+    width: 1.87vw;
     object-fit: contain;
     margin: 0;
     padding: 0;
@@ -52,12 +53,12 @@ footer {
     display: block;
   }
   .footer-links {
-    margin: 30px 0 45px 0;
+    margin: 2.77vh 0 4.16vh 0;
     padding: 0;
     font-family: "TildaSans", sans-serif;
-    font-size: 16px;
+    font-size: 1.48vh;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 2.22vh;
     text-align: center;
     display: flex;
     flex-direction: column;

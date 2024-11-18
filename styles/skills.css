@@ -2,11 +2,11 @@
 * Стили классов секции "Навыки и стэк" *
 ****************************************/
 #skills .big-header {
-    margin: 60px 0;
+    margin: 5.5vh 0;
   }
   .skills-table {
     width: 80%;
-    border-radius: 12px;
+    border-radius: 1.11vh;
     border: 1px solid #5dd9c8;
     /* В этой секции используем grid, а не Flexbox.
      * Именно grid позволяет наиболее точно оформить
@@ -15,7 +15,7 @@
     display: grid;
     /* Задаем 3 колонки равной ширины. */
     grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 70px;
+    margin-bottom: 6.48vh;
   }
   .skills-card {
     border-left: 1px solid #5dd9c8;
@@ -23,7 +23,7 @@
     display: grid;
     /* Задаем 2 строки равной высоты. */
     grid-template-rows: 1fr 1fr;
-    padding: 70px;
+    padding: 6.48vh;
   }
   .skills-card:first-child {
     /* Убираем левую границу у первого элемента. */
@@ -36,47 +36,47 @@
     justify-content: flex-start;
   }
   .skills-card-icon {
-    width: 72px;
-    height: 72px;
+    width: 6.66vw;
+    height: 6.66vh;
   }
   .skills-card-header {
     padding: 0;
-    margin: 25px 0;
+    margin: 2.31vh 0;
     font-family: "TildaSans", sans-serif;
-    font-size: 36px;
+    font-size: 3.33vh;
     font-weight: 700;
-    line-height: 54px;
+    line-height: 5vh;
     text-align: center;
   }
   .skills-card-text {
     font-family: "TildaSans", sans-serif;
-    font-size: 30px;
+    font-size: 2.77vh;
     font-weight: 400;
-    line-height: 45px;
+    line-height: 4.16vh;
     text-align: center;
     margin: 0;
-    padding: 0 0 12px 0px;
+    padding: 0 0 1.11vh 0px;
     width: 100%;
   }
   .skills-card-subheader {
     padding: 0;
-    margin: 12px 0;
+    margin: 1.11vh 0;
     font-family: "TildaSans", sans-serif;
-    font-size: 30px;
+    font-size: 2.77vh;
     font-weight: 700;
-    line-height: 45px;
+    line-height: 4.16vh;
     text-align: center;
   }
   .skills-card-list {
     /* Убираем маркеры у списка. */
     list-style: none;
     font-family: "TildaSans", sans-serif;
-    font-size: 30px;
+    font-size: 2.77vh;
     font-weight: 400;
-    line-height: 45px;
+    line-height: 4.16vh;
     text-align: center;
     margin: 0;
-    padding: 0 0 32px 0;
+    padding: 0 0 2.96vh 0;
     width: 100%;
   }
   .skills-card-list:last-child {

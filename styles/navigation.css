@@ -26,7 +26,7 @@ html {
     /* Делим навбар на три части: пустой отступ 25%,
      * сама навигация 50% и контейнер для кнопки — 25%. */
     width: 50%;
-    margin: 45px 0 45px 25%;
+    margin: 4.7vh 0 4.7vh 25%;
     padding: 0;
     /* Задаем ссылкам отображение display: flex как для контейнера-родителя 
      * с кнопками навбара (элементами <li>). Это нужно для корректного выравнивания 
@@ -46,16 +46,21 @@ html {
   /* Задаем стили для ссылок в навигации. */
   .nav-button {
     font-family: "TildaSans", sans-serif;
-    font-size: 25px;
+    font-size: 2.31vh;
     font-weight: 700;
-    line-height: 36px;
+    line-height: 3.33vh;
+    transition: color 200ms 0ms;
+  }
+  .nav-button:hover{
+    color: lightgray;
   }
   /* Задаем стили для кнопки связаться в навбаре. */
   .contact-button {
     border: 2px solid #ff9235;
-    padding: 9px 22px;
-    border-radius: 15px;
+    padding: 0.83vh 1.15vw;
+    border-radius: 1.4vh;
     margin: 0;
+    transition: all 200ms 0ms;
     /* Не задаем здесь свойство color здесь, так как 
      * цвет задается классом color-orange */
   }
@@ -69,13 +74,14 @@ html {
      * Поэтому при наведении курсора мыши на кнопку 
      * цвет текста color-orange будет меняться на белый. */
     color: #ffffff;
+    
   }
   /* Задаем стили для текста внутри кнопки связаться */
   .contact-button-text {
     font-family: "TildaSans", sans-serif;
-    font-size: 25px;
+    font-size: 2.31vh;
     font-weight: 600;
-    line-height: 27px;
+    line-height: 2.5vh;
     /* Задаем цвет текста через наследование 
      * из родительского элемента contact-button. 
      * Цвет у contact-button задается через общий класс

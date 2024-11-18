@@ -6,11 +6,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 75px 0 0 0;
+    padding: 6.94vh 0 0 0;
   }
   .about-desc {
     width: 70%;
-    margin: 40px 0 182px 0;
+    margin: 3.7vh 0 16.85vh 0;
     padding: 0;
   }
   .about-photo {
@@ -28,10 +28,10 @@
      * margin в таком случае тоже должен быть динамичным.
      * Задаем margin так, чтобы изображение заезжало на элемент выше 
      * примерно на 1/4 своей высоты. */
-    margin: -5vw 0 76px 0;
+    margin: -5vw 0 7.07vh 0;
     padding: 0;
     border: 3px solid #5dd9c8;
-    border-radius: 10px;
+    border-radius: 0.92vh;
     /* Рамка картинки border и скругление углов указываются на контейнере для картинки,
      * а не на самой картинке. 
      * Поэтому нужно скрыть края картинки, которые могут 

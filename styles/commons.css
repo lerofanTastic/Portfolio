@@ -19,12 +19,12 @@
     padding: 0;
     margin: 0;
     font-family: "TildaSans", sans-serif;
-    font-size: 54px;
+    font-size: 5vh;
     font-weight: 700;
     /* Рассчитываем ширину строки так: высота шрифта умножить на 1.5. 
      * Это один из стандартных способов рассчитать правильную
      * высоту строки. */
-    line-height: 81px;
+    line-height: 7.5vh;
     text-align: center;
     /* Все заголовки разделов страницы написаны заглавными буквами.
      * Настраиваем такое отображение через свойство text-transform.
@@ -35,9 +35,9 @@
   /* Задаем стили шрифта для всех описаний в разделах сайта. */
   .desc-font {
     font-family: "TildaSans", sans-serif;
-    font-size: 36px;
+    font-size: 3.33vh;
     font-weight: 400;
-    line-height: 54px;
+    line-height: 5vh;
     text-align: center;
   }
   

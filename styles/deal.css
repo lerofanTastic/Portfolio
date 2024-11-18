@@ -4,13 +4,13 @@
 .letstalk-box {
     /* Задаем отрицательный margin, чтобы создать наложение на предыдущую секцию. */
     margin: 0;
-    padding: 12px 3vw;
+    padding: 1.11vh 3vw;
     background-color: #8063a6;
-    border-radius: 12px;
+    border-radius: 1.11vh;
     width: 80%;
     /* Задаем фиксированную высоту, чтобы было проще настроить
      * наложение секции на следующую. */
-    height: 166px;
+    height: 15.37vh;
     /* Используем flex, чтобы отступы по краям и между элементами были одинаковыми. */
     display: flex;
     flex-direction: row;
@@ -21,9 +21,9 @@
     margin: auto 0;
     color: #ffffff;
     font-family: "TildaSans", sans-serif;
-    font-size: 30px;
+    font-size: 2.77vh;
     font-weight: 700;
-    line-height: 45px;
+    line-height: 4.16vh;
     text-align: center;
   }
   .letstalk-text {
@@ -31,17 +31,18 @@
     padding: 0;
     color: #ffffff;
     font-family: "TildaSans", sans-serif;
-    font-size: 20px;
+    font-size: 1.85vh;
     font-weight: 600;
-    line-height: 30px;
+    line-height: 2.77vh;
     text-align: center;
   }
   .letstalk-button {
     margin: 0;
-    padding: 15px 30px;
+    padding: 1.38vh 1.56vw;
     border: 2px solid #ffffff;
-    border-radius: 15px;
+    border-radius: 1.39vh;
     color: #ffffff;
+    transition: all 200ms 0ms;
   }
   .letstalk-button:hover {
     background-color: #ffffff;
@@ -49,9 +50,9 @@
   }
   .letstalk-button-text {
     font-family: "TildaSans", sans-serif;
-    font-size: 20px;
+    font-size: 1.85vh;
     font-weight: 700;
-    line-height: 30px;
+    line-height: 2.77vh;
     text-align: center;
     /* Отключаем перенос, чтобы flexbox не переносил текст в кнопке. 
      * Все элементы состоят из текста, который можно перенести, 
