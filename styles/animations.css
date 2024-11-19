@@ -1,0 +1,98 @@
+/*****************************
+ * Задаем анимации keyframes *
+ *****************************/
+ @keyframes fadein-1 {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Для того чтобы настроить анимацию последовательного появления
+ * элементов на странице, выбираем свойство, которое отвечает
+ * за видимость элемента. 
+ * Подходит opscity, которое отвечает за прозрачность/непрозрачность элемента.
+ * Свойства типа display и visibility не получится использовать, 
+ * т.к. у них бинарные значения: видно элемент или не видно элемент.
+ * Для настройки анимации важно, чтобы у свойства было больше, чем два значения.
+ * Opacity может принимать лоюбое значение от 0 до 100, поэтому подходит.
+ **********
+ * Чтобы создать последовательное появление, задаем разную длительность анимации
+ * для разных элементов. И в keyframes прописываем, с какого момента начинается
+ * изменение opacity.
+ * Например: если нужно анимировать opacity за 0.5 сек и начать анимацию
+ * с задержкой 1 сек, то длительность анимации на элементе равно 1.5 сек.
+ * В keyframes 0% и 66% обозначаем как opacity 0. Таким образом,
+ * изменение начнется только с 66% прошедшего времени анимации.
+ **********
+ * Подробнее про то, как использовать группы анимации, чтобы выстроить 
+ * последовательность, см. HTML-файл. */
+
+@keyframes fadein-2 {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadein-3 {
+    0% { opacity: 0; }
+    66% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes fadein-4 {
+    0% { opacity: 0; }
+    75% { opacity: 0; }
+    100% { opacity: 1; }
+}
+/* Задаем анимацию навбара через transform. Это создаст эффект того,
+ * что навбар выезжает сверху.
+ * Эта анимация происходит одновременно с анимацией группы fadein-2. */
+@keyframes navbar-enter {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Настраиваем анимацию для постепенного появления элементов.
+ * Создаем для нее отдельные классы, которые будем совмещать с любыми другими классами.
+ * Так можно добавить элементу нужный класс и быстро настроить нужное время его появления. */
+.fade-in-1 {
+    animation-name: fadein-1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+.fade-in-2 {
+    animation-name: fadein-2;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+.fade-in-3 {
+    animation-name: fadein-3;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+}
+.fade-in-4 {
+    animation-name: fadein-4;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+}
+.enter-from-top {
+    animation-name: navbar-enter;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+/* Отключаем анимацию для пользователей, которые предпочитают уменьшенное движение. */
+@media screen and (prefers-reduced-motion: reduce) {
+    .fade-in-1, .fade-in-2, .fade-in-3, .fade-in-4, .enter-from-top, .animated {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Настраиваем переход для кнопок с hover-эффектом. */
+.animated {
+    transition: all 0.5s ease;
+}

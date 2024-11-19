@@ -1,10 +1,11 @@
 /**************************************
-* Отключение ненужного форматирования
-**************************************/
-body {
+ * Отключение ненужного форматирования
+ **************************************/
+ body {
   margin: 0;
   padding: 0;
 }
+
 a {
   /* Отключаем подчеркивание сразу всех
    * ссылок на странице и отключаем синий
@@ -14,19 +15,37 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 a:visited {
   /* Отключаем фиолетовый цвет текста для
    * посещенных ссылок, также, как и выше. */
   text-decoration: none;
   color: inherit;
 }
-button, input, textarea {
+
+button,
+input,
+textarea {
   /* Стиль outline появляется не во всех браузерах. 
    * Но очень портит внешний вид, там,
    * где он включен. Поэтому отключаем его. */
   outline: none;
   appearance: none;
 }
-button:focus, input:focus, textarea:focus {
+
+button:focus,
+input:focus,
+textarea:focus {
   outline: none;
+}
+
+/* Отключаем стандартное форматирование
+* для элементов внутри тега <details>. */
+details > summary {
+  list-style: none;
+}
+
+/* Для Safari */
+details > summary::-webkit-details-marker {
+  display: none;
 }

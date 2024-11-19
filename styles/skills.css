@@ -1,86 +1,126 @@
 /****************************************
-* Стили классов секции "Навыки и стэк" *
-****************************************/
-#skills .big-header {
-    margin: 5.5vh 0;
-  }
+ * Стили классов секции "Навыки и стэк" *
+ ****************************************/
+ #skills .big-header {
+  margin: 60px 0;
+}
+
+.skills-table {
+  width: 80%;
+  border-radius: 12px;
+  border: var(--table-border);
+  /* В этой секции используем grid, а не Flexbox.
+   * Именно grid позволяет наиболее точно оформить
+   * оранжевые подзаголовки. Выровнять их на одном уровне,
+   * несмотря на высоту текста над ними */
+  display: grid;
+  /* Задаем 3 колонки равной ширины. */
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 70px;
+}
+
+.skills-card {
+  border-left: var(--table-border);
+  /* Про выбор grid вместо flex см. выше. */
+  display: grid;
+  /* Задаем 2 строки равной высоты. */
+  grid-template-rows: 1fr 1fr;
+  padding: 70px;
+}
+
+.skills-card:first-child {
+  /* Убираем левую границу у первого элемента. */
+  border-left: 0px;
+}
+
+.skills-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.skills-card-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.skills-card-header {
+  padding: 0;
+  margin: 25px 0;
+  font: var(--text-table-header);
+  text-align: center;
+}
+
+.skills-card-text {
+  font: var(--text-table);
+  text-align: center;
+  margin: 0;
+  padding: 0 0 12px 0px;
+  width: 100%;
+}
+
+.skills-card-subheader {
+  padding: 0;
+  margin: 12px 0;
+  font: var(--text-table-subheader);
+  text-align: center;
+}
+
+.skills-card-list {
+  /* Убираем маркеры у списка. */
+  list-style: none;
+  font: var(--text-table);
+  text-align: center;
+  margin: 0;
+  padding: 0 0 32px 0;
+  width: 100%;
+}
+
+.skills-card-list:last-child {
+  /* Убираем нижний внутренний отступ у последнего элемента.
+   * Можно и вычесть его и из нижнего паддинга родительского элемента. */
+  padding-bottom: 0;
+}
+
+/* Задаем отдельную ширину всей таблице для экранов шириной 1250px и уже. 
+* Таблица увеличивается относительно ширины экрана с 80% до 90%.
+* Это выглядит органичнее. */
+@media screen and (max-width: 1250px) {
   .skills-table {
-    width: 80%;
-    border-radius: 1.11vh;
-    border: 1px solid #5dd9c8;
-    /* В этой секции используем grid, а не Flexbox.
-     * Именно grid позволяет наиболее точно оформить
-     * оранжевые подзаголовки. Выровнять их на одном уровне,
-     * несмотря на высоту текста над ними */
-    display: grid;
-    /* Задаем 3 колонки равной ширины. */
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-bottom: 6.48vh;
+      width: 90%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .skills-table {
+      /* Задаем таблице ширину меньше, чем изначальные 80%,
+       * чтобы на более крупных экранах это выглядело орагничнее. */
+      width: 70%;
+      /* Меняем отображение таблицы на flexbox,
+       * чтобы настроить корректное отображение 
+       * на экранах 1100px и уже.*/
+      display: flex;
+      flex-direction: column;
+      /* Растягиваем колонку на всю ширину экрана. */
+      align-items: stretch;
+      justify-content: center;
   }
   .skills-card {
-    border-left: 1px solid #5dd9c8;
-    /* Про выбор grid вместо flex см. выше. */
-    display: grid;
-    /* Задаем 2 строки равной высоты. */
-    grid-template-rows: 1fr 1fr;
-    padding: 6.48vh;
+      /* Так как при размерах экрана 1100px и меньше
+       * колонки превратились в строки,
+       * убираем левые границы и добавляем верхние. */
+      border-left: none;
+      border-top: var(--table-border);
+      /* Изменяем отображение на flexbox, так как выравнивание
+       * оранжевых подзаголовков больше не нужно. */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
   }
   .skills-card:first-child {
-    /* Убираем левую границу у первого элемента. */
-    border-left: 0px;
+      /* Убираем верхнюю границу у первого элемента. */
+      border-top: none;
   }
-  .skills-card-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .skills-card-icon {
-    width: 6.66vw;
-    height: 6.66vh;
-  }
-  .skills-card-header {
-    padding: 0;
-    margin: 2.31vh 0;
-    font-family: "TildaSans", sans-serif;
-    font-size: 3.33vh;
-    font-weight: 700;
-    line-height: 5vh;
-    text-align: center;
-  }
-  .skills-card-text {
-    font-family: "TildaSans", sans-serif;
-    font-size: 2.77vh;
-    font-weight: 400;
-    line-height: 4.16vh;
-    text-align: center;
-    margin: 0;
-    padding: 0 0 1.11vh 0px;
-    width: 100%;
-  }
-  .skills-card-subheader {
-    padding: 0;
-    margin: 1.11vh 0;
-    font-family: "TildaSans", sans-serif;
-    font-size: 2.77vh;
-    font-weight: 700;
-    line-height: 4.16vh;
-    text-align: center;
-  }
-  .skills-card-list {
-    /* Убираем маркеры у списка. */
-    list-style: none;
-    font-family: "TildaSans", sans-serif;
-    font-size: 2.77vh;
-    font-weight: 400;
-    line-height: 4.16vh;
-    text-align: center;
-    margin: 0;
-    padding: 0 0 2.96vh 0;
-    width: 100%;
-  }
-  .skills-card-list:last-child {
-    /* Убираем нижний внутренний отступ у последнего элемента.
-     * Можно и вычесть его и из нижнего паддинга родительского элемента. */
-    padding-bottom: 0;
-  }
+}

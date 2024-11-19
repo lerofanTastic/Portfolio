@@ -2,24 +2,35 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="website" />
         <title>Портфолио</title>
-        <link rel="stylesheet" href="/styles/about.css">
-        <link rel="stylesheet" href="/styles/colors.css">
-        <link rel="stylesheet" href="/styles/commons.css">
-        <link rel="stylesheet" href="/styles/contacts.css">
-        <link rel="stylesheet" href="/styles/deal.css">
+        <meta property="og:title" content="Портфолио" />
+        <meta name="description" content="Описание сайта отображаемое в превью ссылок" />
+        <meta property="og:description" content="Описание сайта отображаемое в превью ссылок" />
+        <meta name="keywords" content="портфолио, веб-разработчик, веб-дизайнер, сайты" />
+        <meta property="og:image" content="https://example.com/assets/img/preview.png" />
+        <meta property="og:image:alt" content="Описание изображения" />
+        <meta property="og:url" content="https://example.com/" />
+        <link rel="canonical" href="https://example.com/" />
+        <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
         <link rel="stylesheet" href="/styles/fonts.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-        <link rel="stylesheet" href="/styles/formats.css">
+        <link rel="stylesheet" href="/styles/reset.css">
+        <link rel="stylesheet" href="/styles/common.css">
+        <link rel="stylesheet" href="/styles/navbar.css">
         <link rel="stylesheet" href="/styles/main.css">
-        <link rel="stylesheet" href="/styles/navigation.css">
-        <link rel="stylesheet" href="/styles/projects.css">
-        <link rel="stylesheet" href="/styles/reviews.css">
+        <link rel="stylesheet" href="/styles/about.css">
         <link rel="stylesheet" href="/styles/skills.css">
+        <link rel="stylesheet" href="/styles/projects.css">
+        <link rel="stylesheet" href="/styles/form.css">
+        <link rel="stylesheet" href="/styles/reviews.css">
+        <link rel="stylesheet" href="/styles/letstalk.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+        <link rel="stylesheet" href="/styles/animations.css">
     </head>
-    <body>
-        <nav>
+    <body tabindex="0">
+        <nav class="enter-from-top">
             <ul>
                 <li>
                     <a class="nav-button color-black" href="#main">Главная</a>
@@ -33,34 +44,48 @@
                 <li>
                     <a class="nav-button color-black" href="#projects">Проекты</a>
                 </li>
-            </ul>
+            </ul>         
             <div class="contact-button-container">
-                <a class="contact-button color-orange" href="#form">
+                <a class="contact-button color-orange animated" href="#form">
                     <span class="contact-button-text">Связаться со мной</span>
                 </a>
             </div>
         </nav>
+        <nav class="mobile-nav enter-from-top">
+            <details>
+                <summary></summary>
+                <ul>
+                    <li><a class="nav-button color-black" href="#main">Главная</a></li>
+                    <li><a class="nav-button color-black" href="#about">Обо мне</a></li>
+                    <li><a class="nav-button color-black" href="#skills">Навыки и стек</a></li>
+                    <li><a class="nav-button color-black" href="#projects">Проекты</a></li>
+                </ul>
+            </details>
+            <a class="contact-button color-orange animated" href="#form">
+                <span class="contact-button-text">Связаться со мной</span>
+            </a>
+        </nav>
 
         <main>
             <section class="container" id="main">
-                <h1 class="big-header color-black">Сухоручкин Егор</h1>
-                <p class="main-desc desc-font color-black">Я — frontend разработчик. Моя основная задача заключается в создании интерактивных и привлекательных пользовательских интерфейсов, которые обеспечивают высокий уровень удобства и эффективности для пользователей.</p>      
-                <img class="main-pic" src="/assets/images/main.png">
+                <h1 class="big-header color-black fade-in-1">Сухоручкин Егор</h1>
+                <p class="main-desc desc-font color-black fade-in-2">Я — frontend разработчик. Моя основная задача заключается в создании интерактивных и привлекательных пользовательских интерфейсов, которые обеспечивают высокий уровень удобства и эффективности для пользователей.</p>      
+                <img class="main-pic fade-in-3" src="/assets/images/main.png">
             </section>
 
             <section class="container" id="about">
                 
-                <div class="about-details background-turquoise">
-                    <h1 class="big-header color-black">Привет, я веб-разработчик</h1>
-                    <p class="about-desc desc-font color-black">Почему я выбрал эту профессию? Fontend development позволяет мне совмещать творчество с техническими навыками, создавая решения, которые помогают людям и бизнесам достигать своих целей. Я нацелен на результат и стремлюсь к качеству в каждом проекте.</p>
+                <div class="about-details background-turquoise fade-in-1">
+                    <h1 class="big-header color-black fade-in-2">Привет, я веб-разработчик</h1>
+                    <p class="about-desc desc-font color-black fade-in-3">Почему я выбрал эту профессию? Fontend development позволяет мне совмещать творчество с техническими навыками, создавая решения, которые помогают людям и бизнесам достигать своих целей. Я нацелен на результат и стремлюсь к качеству в каждом проекте.</p>
                 </div>
-                <figure class="about-photo">
+                <figure class="about-photo fade-in-4">
                     <img src="/assets/images/lero.jpg">
                 </figure>       
             </section>
 
             <section class="container" id="skills">
-                <h1 class="big-header color-black">
+                <h1 class="big-header color-black fade-in-1">
                     Навыки и стек технологий
                 </h1>
 
@@ -68,13 +93,13 @@
                     Создаем контейнер, который содержит в себе
                     все три колонки таблицы с навыками.
                 -->
-                <div class="skills-table">
+                <div class="skills-table fade-in-2">
 
                     <!-- 
                         Создаем Класс "skills-card" для одной колонки,
                         чтобы настроить стиль отображения отдельной колонки в разделе. 
                     -->
-                    <div class="skills-card">
+                    <div class="skills-card fade-in-2">
 
                         <!--
                             Создаем класс "skills-card-section" внутри "skills-card".
@@ -139,7 +164,7 @@
                     </div>
 
                     <!-- Добавляем еще две колонки таблицы с навыками. -->
-                    <div class="skills-card">
+                    <div class="skills-card fade-in-3">
                         <section class="skills-card-section">
                             <img 
                                 class="skills-card-icon" 
@@ -164,7 +189,7 @@
                         </section>
                     </div>
 
-                    <div class="skills-card">
+                    <div class="skills-card fade-in-4">
                         <section class="skills-card-section">
                             <img 
                                 class="skills-card-icon"
@@ -195,88 +220,60 @@
             </section>
 
             <section class="container" id="projects">
-                <h1 class="big-header color-black">ПРОЕКТЫ</h1>
-                <div class="projects-display">
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                <h1 class="big-header color-black fade-in-1">ПРОЕКТЫ</h1>
+                <div class="projects-display fade-in-2">
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                    <figure class="projects-card">                
-                        <img src="/assets/images/project.jpg">
-                        <div class="projects-card-text">
-                            <span>Скоро тут будет описание</span>
-                            <a href="">
-                                <div class="projects-card-text-button">
-                                    <span>Посмотреть сайт</span>
-                                </div>  
-                            </a>                        
-                        </div> 
+                    <figure class="projects-card">
+                        <figcaption class="projects-card-caption">
+                            Короткое описание проекта: в чем его суть, что было сделано
+                            <a class="animated" href="https://example.com">Посмотреть сайт</a>
+                        </figcaption>
                     </figure>
-                </div> 
-                <a class="projects-button color-orange" href="https://github.com/lerofanTastic">
+                </div>
+
+                <!-- Задаем появление кнопки на третьем этапе анимации. -->
+                <a class="projects-button color-orange fade-in-3 animated" href="https://github.com/username">
                     <span class="projects-button-text">Посмотреть на Github</span>
                 </a>
             </section>
 
             <section class="container" id="form">
-                <div class="form-details container background-turquoise">
-                    <h1 class="big-header color-black">Хотите заказать сайт?</h2>
-                    <p class="form-details-text desc-font color-black">Напишите мне, чтобы обсудить детали.</p>
+                <div class="form-details container background-turquoise fade-in-1">
+                    <h1 class="big-header color-black fade-in-2">Хотите заказать сайт?</h1>
+                    <p class="form-details-text desc-font color-black fade-in-2">Напишите мне, чтобы обсудить детали.</p>
                 </div>
                 <div class="form-container" id="contact-form">
-                    <img class="form-pic" src="/assets/images/form.png">
-                    <form class="form">
+                    <img class="form-pic fade-in-3" src="/assets/images/form.png">
+                    <form class="form fade-in-4">
                         <fieldset class="form-sender-data">
                             <label class="form-field" for="name">
                                 <span class="form-label color-black">Имя</span>
@@ -294,7 +291,7 @@
                             </label>
                         </fieldset>
                         <fieldset class="form-submit">
-                            <button class="form-button color-orange" type="submit">
+                            <button class="form-button color-orange animated" type="submit">
                                 <span class="form-button-text">Отправить</span>
                             </button>
                         </fieldset>
@@ -303,45 +300,45 @@
             </section>
 
             <section class="container" id="reviews">
-                <h1 class="big-header color-black">ОТЗЫВЫ</h1>
-                <p class="reviews-desc desc-font color-black">Люди, с которыми я работал, остаются довольны результатом</p>
+                <h1 class="big-header color-black fade-in-1">ОТЗЫВЫ</h1>
+                <p class="reviews-desc desc-font color-black fade-in-2">Люди, с которыми я работал, остаются довольны результатом</p>
                 <figure class="reviews-card">
-                    <div class="reviews-photo">
+                    <div class="reviews-photo fade-in-3">
                         <img src="/assets/images/trump.jpg">  
                     </div>
-                    <figcaption class="reviews-caption">
+                    <figcaption class="reviews-caption fade-in-4">
                         <p class="reviews-text color-black">«Всё четко, легкая победа благодаря Егорке»</p>
                         <p class="reviews-info color-black">Дональд Трамп</p>
                         <p class="reviews-info color-black">US goverment, USA</p>
                     </figcaption>
                 </figure>
-                <div class="reviews-toggle">
-                    <button class="reviews-toggle-button" type="button">
+                <div class="reviews-toggle fade-in-4">
+                    <button class="reviews-toggle-button animated" type="button">
                         <img  class="reviews-toggle-arrow" src="/assets/icons/Arrow-L.svg">
                         <img class="reviews-toggle-arrow icon-hover" src="/assets/icons/Arrow-L-white.svg">
                     </button>
-                    <button class="reviews-toggle-button" type="button">
+                    <button class="reviews-toggle-button animated" type="button">
                         <img  class="reviews-toggle-arrow" src="/assets/icons/Arrow-R.svg">
                         <img class="reviews-toggle-arrow icon-hover" src="/assets/icons/Arrow-R-white.svg">
                     </button>            
                 </div>
             </section>
         </main>
-        <aside class="container" id="letstalk">
-            <div class="letstalk-box">
+        <aside class="container fade-in-1" id="letstalk">
+            <div class="letstalk-box fade-in-2">
                 <h2 class="letstalk-header">Договоримся о сотрудничестве</h3>
                 <p class="letstalk-text">У вас есть идея проекта или предложение о работе? Напишите мне. Я открыт к разным вариантам сотрудничества.</p>
                 <div class="letstalk-button-container">
-                    <a class="letstalk-button" href="#form">
+                    <a class="letstalk-button animated" href="#form">
                         <span class="letstalk-button-text">Связаться с разработчиком</span>
                     </a>
                 </div>
             </div>
         </aside>
                 
-        <footer>
-            <div class="footer-socials">
-                <a class="footer-social-container" href="https://t.me/leroty">
+        <footer class="fade-in-1">
+            <div class="footer-socials fade-in-2">
+                <a class="footer-social-container animated" href="https://t.me/leroty">
                     <img 
                         class="footer-social-icon" 
                         src="/assets/icons/TG.svg"
@@ -351,7 +348,7 @@
                         src="/assets/icons/TG-white.svg"
                     />
                 </a>
-                <a class="footer-social-container" href="https://habr.com/ru/users/example">
+                <a class="footer-social-container animated" href="https://habr.com/ru/users/example">
                     <img
                         class="footer-social-icon" 
                         src="/assets/icons/Habr.svg" 
@@ -361,7 +358,7 @@
                         src="/assets/icons/Habr-white.svg"
                     />
                 </a>
-                <a class="footer-social-container" href="mailto:leroty@bk.ru">
+                <a class="footer-social-container animated" href="mailto:leroty@bk.ru">
                     <img 
                         class="footer-social-icon " 
                         src="/assets/icons/Email.svg" 
@@ -372,7 +369,7 @@
                     />
                 </a>
             </div>
-            <p class="footer-links color-black">
+            <p class="footer-links color-black fade-in-3">
                 Изображения и иконки:
                 <a href="https://ru.freepik.com/free-vector/software-integration-concept-illustration_18352184.htm#page=2&query=веб-разработка&position=7&from_view=search&track=sph">
                     Изображение-1 от Storyset на Freepik.

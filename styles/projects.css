@@ -1,112 +1,155 @@
 /**********************************
-* Стили классов секции «Проекты» *
-**********************************/
-#projects .big-header {
-    margin: 6.48vh 0;
-  }
-  .projects-display {
-    width: 80%;
-    display: flex;
-    /* Задаем flex-wrap, чтобы карточки были не в одну строку и их количество 
-     * можно было динамически менять. */
-    flex-wrap: wrap;
-    /* Задаем расстояние между карточками с помощью gap.
-     * Не используем здесь space-between, чтобы сохранить соотношение
-     * сторон скриншотов 16:9. */
-    gap: 2vw;
-    /* Центрируем карточки на случай, если количество карточек не будет кратно трем */
-    justify-content: center;
-  }
-  .projects-card {
-    padding: 0;
-    margin: 0;
-    /* Про использование vw, чтобы сохранить соотношения сторон, см. выше */
-    width: 24vw;
-    height: 13.5vw;
-    /* Используем box-sizing: border-box, чтобы толщина границ 
-     * учитывалась в размер карточки и flex-wrap
-     * работал корректно. */
-    box-sizing: border-box;
-    border: 3px solid #8063a6;
-    border-radius: 1.11vh;
-    /* Про overflow: hidden 
-     * для скругления углов см. выше. */
-    overflow: hidden;
-    position: relative;
-    transition: all 300ms 0ms;
-  }
-  .projects-card:hover{
-    transform: scale(1.1);
-    box-shadow: 10px 5px 5px gray;
-  }
-  .projects-card img{
-    width: 100%;
-    height: 100%;
-    
-    /* Про object-fit: cover 
-     * для скругления углов см. выше. */
-    object-fit: cover;
-  }
+ * Стили классов секции "Проекты" *
+ **********************************/
+ #projects .big-header {
+  margin: 70px 0;
+}
 
-  .projects-card-text{
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 100%;
-    position: absolute;
-    text-align: center;
-    color: #fff;
-    background-color: #8063A6;
-    opacity: 0;
-    transition: opacity 300ms 0ms;
+.projects-display {
+  width: 80%;
+  display: flex;
+  /* Задаем flex-wrap, чтобы карточки были не в одну строку и их количество 
+   * можно было динамически менять. */
+  flex-wrap: wrap;
+  /* Задаем расстояние между карточками с помощью gap.
+   * Не используем здесь space-between, чтобы сохранить соотношение
+   * сторон скриншотов 16:9. */
+  gap: 2vw;
+  /* Центрируем карточки на случай, 
+   * если количество карточек не будет кратно трем */
+  justify-content: center;
+}
+
+.projects-card {
+  padding: 0;
+  margin: 0;
+  width: 24vw;
+  height: 13.5vw;
+  /* Используем box-sizing: border-box, чтобы толщина границ 
+   * учитывалась в размер карточки и flex-wrap
+   * работал корректно. */
+  box-sizing: border-box;
+  border: 3px solid var(--color-purp);
+  border-radius: 12px;
+  /* Задаем карточкам background. Изображение теперь вставляем не в HTML,
+   * а в CSS через background.
+   * При этом у фона появляется два слоя: сама картинка и белый фон под ней.
+   * Белый фон нужен, чтобы карточка не становилась пустой в момент, 
+   * когда происходит transition — смена скриншота на фиолетовый цвет. */
+  background: url(../assets/img/screenshot.png), var(--color-whit);
+  /* Используем background-size: cover, чтобы размер картинки 
+   * уменьшался до размеров карточки и не оставлял пустых мест. */
+  background-size: cover;
+  overflow: hidden;
+  /* Задаем z-index, чтобы у transition было стартовое значение. */
+  z-index: 4;
+  /* Задаем transition для плавного изменения размера карточки при наведении.
+   * Задаем z-index, чтобы карточки не накладывались друг на друга, 
+   * когда заканчивается hover.
+   * Если не настроить z-index, переход от ховера к обычному состоянию
+   * карточки произойдет мнгновенно. И карточки наложатся друг на друга
+   * в соответствии с порядком в HTML-коде. 
+   * Используем ease-out вместо ease-in, чтобы настроить обратную
+   * анимацию уменьшения карточки и корректное взаимодействие с другими
+   * карточками в этот момент. 
+   * Если с одной карточки сразу перевести курсор на другую, новая карточка
+   * вовремя выйдет на первый план. */
+  transition: transform   0.3s ease-in,
+              background  0.3s ease-in,
+              box-shadow  0.3s ease-in,
+              z-index     0.3s ease-out;
+}
+
+.projects-card:hover {
+  /* Задаем у ховера z-index выше, чтобы карточка накладывалась поверх неактивных.
+   * Устанавливаем значение 8, с которым transition будет реалистичнее выглядеть,
+   * если нужно будет пройти несколько слоев вместо одного. */
+  z-index: 8;
+  transform: scale(1.25);
+  /* В ховере используем background вместо background-color, 
+   * потому что нужно убрать скриншот полностью.
+   * Если задать background-color, то изменится только 
+   * вторичный цвет фона, который был белым. */
+  background: var(--color-purp);
+  box-shadow: var(--card-shadow);
+}
+
+.projects-card-caption {
+  /* Скрываем описание карточки, которое появляется только на ховере.
+   * Вместо display: none используем opacity: 0, то есть делаем его прозрачным.
+   * Это нужно для того, чтобы настроить плавный transition, в котором
+   * используется opacity. */
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 32px;
+  margin: 0;
+  font: var(--text-proj-desc);
+  text-align: center;
+  color: var(--color-whit);
+  /* Задаем описанию такие же время и функцию transition, как у карточки.
+   * Так как они должны срабатывать одновременно. */
+  transform: opacity 0.3s ease-in;
+}
+
+.projects-card:hover .projects-card-caption {
+  opacity: 1;
+}
+
+.projects-card-caption a {
+  font: var(--text-bold-button);
+  color: var(--color-whit);
+  margin-top: 30px;
+  padding: 9px 22px;
+  border: 2px solid var(--color-whit);
+  border-radius: 15px;
+}
+
+.projects-card-caption a:hover {
+  background-color: var(--color-whit);
+  color: var(--color-purp);
+}
+
+.projects-button {
+  padding: 15px 40px;
+  margin: 100px 0;
+  border: var(--button-border);
+  border-radius: 15px;
+}
+
+.projects-button:hover {
+  background-color: var(--color-orng);
+  color: var(--color-whit);
+}
+
+.projects-button-text {
+  font: var(--text-button);
+  text-align: center;
+  /* Настраиваем nowrap, чтобы flexbox не переносил текст в кнопке. 
+   * А также для того, чтобы сохранялся ее изначальный размер. */
+  white-space: nowrap;
+  color: inherit;
+}
+
+/* Настраиваем медиа-запросы для адаптивности.
+* Меняем размер карточки так, чтобы помещалась 1 или 2
+* в зависимости от размера экрана. */
+
+@media screen and (max-width: 1400px) {
+  .projects-card {
+      width: 36vw;
+      height: 20.25vw;
   }
-  .projects-card-text:hover{
-    opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .projects-card {
+      width: 64vw;
+      height: 36vw;
   }
-  .projects-card-text-button{
-    padding: 1vh 2vw;
-    margin: 1.85vh auto;
-    border: 2px solid white;
-    border-radius: 1.39vh;
-    transition: all 200ms 0ms;
-  }
-  .projects-card-text-button:hover{
-    background-color: #fff;
-    color: #8063A6;
-    
-  }
-  .projects-card-text>span{
-    font-family: 'TildaSans';
-    font-size: 2.3vh;
-    font-weight: 400;
-    line-height: 2.7vh;
-  }
-  .projects-card-text-button>span{
-    font-family: 'TildaSans';
-    font-size: 2.3vh;
-    font-weight: 600;
-    line-height: 2.5vh;
-  }
-  
-  .projects-button {
-    padding: 1.38vh 2.08vw;
-    margin: 100px 0;
-    border: 2px solid #ff9235;
-    border-radius: 1.39vh;
-    transition: all 200ms 0ms;
-  }
-  .projects-button:hover {
-    background-color: #ff9235;
-    color: #ffffff;
-  }
-  .projects-button-text {
-    font-family: "TildaSans", sans-serif;
-    font-size: 2.31vh;
-    font-weight: 700;
-    line-height: 2.77vh;
-    text-align: center;
-    /* Про наследования цвета при hover и комбинировании классов см. выше. */
-    color: inherit;
-  }
+}

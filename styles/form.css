@@ -1,0 +1,192 @@
+/*********************************
+ * Стили классов секции с формой *
+ *********************************/
+ #form .big-header {
+  text-transform: none;
+  margin-bottom: 45px;
+}
+
+.form-details {
+  padding: 64px 0;
+}
+
+.form-details-text {
+  padding: 0;
+  margin: 0;
+}
+
+.form-pic {
+ /* Задаем размер картинки в зависимости от ширины 
+  * экрана, чтобы форма отображалась корректно на более узких размерах окна.
+  * vw используется, чтобы сохранить соотношение сторон картинки. 
+  * Подробнее см. в файле about.css. */
+  width: 35vw;
+  height: 35vw;
+  margin-left: 5vw;
+}
+
+.form-container {
+  width: 100%;
+  padding: 100px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  margin: 0 5vw;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-sender-data {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Убираем рамку, которая есть по умолчанию у элемента <fieldset>. */
+  border: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-field {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.form-label {
+  margin: 0 0 10px 4px;
+  padding: 0;
+  font: var(--text-form-label);
+  text-align: center;
+}
+
+/* Задаем стили для полей формы input и textarea. */
+.form-input {
+  margin: 0;
+  font: var(--text-p);
+  border: 1px solid var(--color-orng);
+  border-radius: 12px;
+}
+
+/* Уточненяем стили для полей input, которые
+* находятся в контейнере с классом form-sender-data. */
+.form-sender-data .form-input {
+  min-width: 150px;
+  max-width: 20vw;
+  padding: 0 6px;
+}
+
+/* Используем псевдокласс first-child, чтобы добавить
+* отступ между полями ввода.
+* Поскольку их всего 2, задаем отступ первому элементу
+* в родительском контейнере. */
+.form-sender-data .form-field:first-child {
+  padding-right: 10px;
+}
+
+.form-text-body {
+  margin: 48px 0 0 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Уточняем стили для textarea, который
+* находится в контейнере с классом form-text-body. */
+.form-text-body .form-input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.form-submit {
+  margin: 48px 0 0 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  /* Используем flex-end, чтобы выровнять кнопку по правому краю. */
+  justify-content: flex-end;
+}
+
+.form-button {
+  padding: 15px 40px;
+  margin: 0;
+  background-color: var(--color-whit);
+  border: 2px solid var(--color-orng);
+  border-radius: 15px;
+}
+
+.form-button:hover {
+  background-color: var(--color-orng);
+  color: var(--color-whit);
+}
+
+.form-button-text {
+  font: var(--text-button);
+  text-align: center;
+  /* Про inherit для наследования цвета 
+   * при hover и комбинировании классов см. другие СSS-файлы. */
+  color: inherit;
+}
+
+/* Настраиваем медиа-запрос для экранов шириной 900px и меньше. 
+* На таких экранах картинка должна быть над формой.
+* Поля имени и email должны быть в колонку и занимать
+* всю ширину экрана. 
+* Для этого нужно внести много мелких изменений,
+* которые можно увидеть ниже. */
+@media screen and (max-width: 900px) {
+  .form-container {
+      width: 100%;
+      padding: 100px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+  .form {
+      width: 90vw;
+  }
+  .form-sender-data, .form-field {
+      width: 100%;
+  }
+  .form-sender-data .form-field:first-child {
+      padding-right: 0;
+      margin-bottom: 48px;
+  }
+  .form-sender-data .form-input {
+      max-width: unset;
+      width: 100%;
+      box-sizing: border-box;
+  }
+  .form-pic {
+      /* Используем vmax вместо vw, потому что
+       * у мобильных устройств ширина экрана обычно
+       * меньше высоты. vmax автоматически выбирает 
+       * большее из значений vw и vh. Поэтому с помощью него
+       * проще настроить отображение картинки на мобильных устройствах. */
+      width: 60vmax;
+      height: 60vmax;
+      max-width: 90vw;
+      max-height: 90vw;
+      margin-left: 0;
+      margin-bottom: 5vw;
+  }
+}

@@ -1,0 +1,99 @@
+/*******************************************************
+ * Стили классов секции "Договоримся о сотрудничестве" *
+ *******************************************************/
+ #letstalk {
+  /* Переделываем эффект наложения фиолетового блока на другие секции. 
+   * Ранее настраивали это через отрицательные отступы. 
+   * Чтобы с наложением было удобнее работать в адаптивности, настраиваем его иначе. 
+   * Эффект наложения здесь создается за счет фона у самой секции,
+   * который отображается под фиолетовым блоком.
+   * Создаем на фоне градиент с резким переходом от белого цвета к зеленому. 
+   * Таким образом, фактически блок ни на что не накладывается. 
+   * Но благодаря тому, что белая часть фона сливается с фоном предыдущей секции,
+   * а зеленая часть фона сливается с фоном следующей секции, возникает эффект наложения.
+   * Это нужно для того, чтобы высота самого фиолетового блока
+   * была динамичной. Если настроить margin, динамичность будет ниже. */
+  background: linear-gradient(180deg, var(--color-whit) 50%, var(--color-turq) 50%);
+}
+
+.letstalk-box {
+  margin: 0;
+  padding: 3vw;
+  background-color: var(--color-purp);
+  box-shadow: var(--card-shadow);
+  border-radius: 12px;
+  width: 80%;
+   /* Используем flex, чтобы отступы по краям и между элементами были одинаковыми. */
+  display: flex;
+  flex-direction: row;
+  /* gap равен горизонтальному padding */
+  gap: 3vw;
+}
+
+.letstalk-header {
+  margin: auto 0;
+  color: var(--color-whit);
+  font: var(--text-table-subheader);
+  text-align: center;
+}
+
+.letstalk-text {
+  margin: auto 0;
+  padding: 0;
+  color: var(--color-whit);
+  font: var(--text-box-header);
+  text-align: center;
+}
+
+.letstalk-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.letstalk-button {
+  margin: 0;
+  padding: 15px 30px;
+  /* Переменные можно использовать в любом месте,
+   * даже внутри свойства, как здесь. */
+  border: 2px solid var(--color-whit);
+  border-radius: 15px;
+  color: var(--color-whit);
+}
+
+.letstalk-button:hover {
+  background-color: var(--color-whit);
+  color: var(--color-purp);
+}
+
+.letstalk-button-text {
+  font: var(--text-box-button);
+  text-align: center;
+  /* Отключаем перенос, чтобы flexbox не переносил текст в кнопке. 
+   * Все элементы состоят из текста, который можно перенести, 
+   * но здесь нам это не нужно. Поэтому отключаем перенос. */
+  white-space: nowrap;
+  color: inherit;
+}
+
+/* Создаем медиа-запрос для экранов шириной 1100 px и меньше. 
+* Чтобы фиолетовый блок отображался корректно,
+* меняем flexbox на колонку.
+* Дополнительно делаем отступы больше, чтобы
+* текст не расползался в одну строчку. */
+@media screen and (max-width: 1100px) {
+  .letstalk-box {
+      width: 60%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+}
+
+/* На экранах 900px и уже возвращаемся к изначальным отступам. */
+@media screen and (max-width: 900px) {
+  .letstalk-box {
+      width: 80%;
+  }
+}
