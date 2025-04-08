@@ -16,10 +16,6 @@
 }
 
 .form-pic {
- /* Задаем размер картинки в зависимости от ширины 
-  * экрана, чтобы форма отображалась корректно на более узких размерах окна.
-  * vw используется, чтобы сохранить соотношение сторон картинки. 
-  * Подробнее см. в файле about.css. */
   width: 35vw;
   height: 35vw;
   margin-left: 5vw;
@@ -47,7 +43,6 @@
   margin: 0;
   padding: 0;
   width: 100%;
-  /* Убираем рамку, которая есть по умолчанию у элемента <fieldset>. */
   border: none;
   display: flex;
   flex-direction: row;
@@ -72,7 +67,6 @@
   text-align: center;
 }
 
-/* Задаем стили для полей формы input и textarea. */
 .form-input {
   margin: 0;
   font: var(--text-p);
@@ -80,18 +74,12 @@
   border-radius: 12px;
 }
 
-/* Уточненяем стили для полей input, которые
-* находятся в контейнере с классом form-sender-data. */
 .form-sender-data .form-input {
   min-width: 150px;
   max-width: 20vw;
   padding: 0 6px;
 }
 
-/* Используем псевдокласс first-child, чтобы добавить
-* отступ между полями ввода.
-* Поскольку их всего 2, задаем отступ первому элементу
-* в родительском контейнере. */
 .form-sender-data .form-field:first-child {
   padding-right: 10px;
 }
@@ -104,8 +92,6 @@
   border: none;
 }
 
-/* Уточняем стили для textarea, который
-* находится в контейнере с классом form-text-body. */
 .form-text-body .form-input {
   width: 100%;
   height: 100%;
@@ -120,7 +106,6 @@
   border: none;
   display: flex;
   flex-direction: row;
-  /* Используем flex-end, чтобы выровнять кнопку по правому краю. */
   justify-content: flex-end;
 }
 
@@ -140,17 +125,9 @@
 .form-button-text {
   font: var(--text-button);
   text-align: center;
-  /* Про inherit для наследования цвета 
-   * при hover и комбинировании классов см. другие СSS-файлы. */
   color: inherit;
 }
 
-/* Настраиваем медиа-запрос для экранов шириной 900px и меньше. 
-* На таких экранах картинка должна быть над формой.
-* Поля имени и email должны быть в колонку и занимать
-* всю ширину экрана. 
-* Для этого нужно внести много мелких изменений,
-* которые можно увидеть ниже. */
 @media screen and (max-width: 900px) {
   .form-container {
       width: 100%;
@@ -177,11 +154,6 @@
       box-sizing: border-box;
   }
   .form-pic {
-      /* Используем vmax вместо vw, потому что
-       * у мобильных устройств ширина экрана обычно
-       * меньше высоты. vmax автоматически выбирает 
-       * большее из значений vw и vh. Поэтому с помощью него
-       * проще настроить отображение картинки на мобильных устройствах. */
       width: 60vmax;
       height: 60vmax;
       max-width: 90vw;

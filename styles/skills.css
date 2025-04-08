@@ -9,27 +9,19 @@
   width: 80%;
   border-radius: 12px;
   border: var(--table-border);
-  /* В этой секции используем grid, а не Flexbox.
-   * Именно grid позволяет наиболее точно оформить
-   * оранжевые подзаголовки. Выровнять их на одном уровне,
-   * несмотря на высоту текста над ними */
   display: grid;
-  /* Задаем 3 колонки равной ширины. */
   grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 70px;
 }
 
 .skills-card {
   border-left: var(--table-border);
-  /* Про выбор grid вместо flex см. выше. */
   display: grid;
-  /* Задаем 2 строки равной высоты. */
   grid-template-rows: 1fr 1fr;
   padding: 70px;
 }
 
 .skills-card:first-child {
-  /* Убираем левую границу у первого элемента. */
   border-left: 0px;
 }
 
@@ -68,7 +60,6 @@
 }
 
 .skills-card-list {
-  /* Убираем маркеры у списка. */
   list-style: none;
   font: var(--text-table);
   text-align: center;
@@ -78,14 +69,9 @@
 }
 
 .skills-card-list:last-child {
-  /* Убираем нижний внутренний отступ у последнего элемента.
-   * Можно и вычесть его и из нижнего паддинга родительского элемента. */
   padding-bottom: 0;
 }
 
-/* Задаем отдельную ширину всей таблице для экранов шириной 1250px и уже. 
-* Таблица увеличивается относительно ширины экрана с 80% до 90%.
-* Это выглядит органичнее. */
 @media screen and (max-width: 1250px) {
   .skills-table {
       width: 90%;
@@ -94,33 +80,21 @@
 
 @media screen and (max-width: 1100px) {
   .skills-table {
-      /* Задаем таблице ширину меньше, чем изначальные 80%,
-       * чтобы на более крупных экранах это выглядело орагничнее. */
       width: 70%;
-      /* Меняем отображение таблицы на flexbox,
-       * чтобы настроить корректное отображение 
-       * на экранах 1100px и уже.*/
       display: flex;
       flex-direction: column;
-      /* Растягиваем колонку на всю ширину экрана. */
       align-items: stretch;
       justify-content: center;
   }
   .skills-card {
-      /* Так как при размерах экрана 1100px и меньше
-       * колонки превратились в строки,
-       * убираем левые границы и добавляем верхние. */
       border-left: none;
       border-top: var(--table-border);
-      /* Изменяем отображение на flexbox, так как выравнивание
-       * оранжевых подзаголовков больше не нужно. */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
   }
   .skills-card:first-child {
-      /* Убираем верхнюю границу у первого элемента. */
       border-top: none;
   }
 }

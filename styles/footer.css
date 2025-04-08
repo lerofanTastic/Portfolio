@@ -2,9 +2,6 @@
  * Стили классов футера *
  ************************/
  footer {
-  /* Здесь больше не нужен отрицательный margin, т.к.
-   * эффект наложения фиолетовой секции теперь 
-   * сделан иначе (см. letstalk.css). */
   margin: 0;
   padding: 0;
   background-color: var(--color-turq);
@@ -36,8 +33,6 @@
   border: 2px solid var(--color-purp);
 }
 
-/* Задаем стили сразу двум иконкам разных цветов. 
-* Подробнее см. HTML-файл. */
 .footer-social-icon {
   height: 36px;
   width: 36px;

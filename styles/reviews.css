@@ -20,24 +20,18 @@
 }
 
 .reviews-photo {
-  /* используем vw, чтобы сохранить соотношение 
-   * сторон картинки. */
   width: 20vw;
   height: 15vw;
-  margin: 51px 0;
+  margin: 51px auto;
   padding: 0;
   border: var(--img-border);
   border-radius: 10px;
-  /* Про использование overflow: hidden для корректного
-   * скругления углов см. about.css. */
   overflow: hidden;
 }
 
 .reviews-photo img {
   height: 100%;
   width: 100%;
-  /* Про использование object-fit: cover для корректного
-   * скругления углов см. about.css. */
   object-fit: cover;
 }
 
@@ -56,19 +50,12 @@
 .reviews-info {
   margin: 0;
   padding: 0;
-  /* Используем переменную для удобства изменения стилей, несмотря на то,
-   * что такое значение встречается только один раз. */
   font: var(--text-reviews-info);
   text-align: center;
 }
 
 .reviews-toggle {
   margin: 41px 0 45px 0;
-  /* Задаем конкретный размер кнопок, так как они не меняются 
-   * в зависимости от размера экрана. 
-   * В ширину включаем размер двух кнопок и отступ между ними.
-   * Задаем space-between, чтобы кнопки прижались к краям 
-   * родительского контейнера и между ними появился отступ. */
   width: 138px;
   display: flex;
   flex-direction: row;
@@ -87,8 +74,6 @@
   background-color: var(--color-orng);
 }
 
-/* Заменяем одну иконку на вторую, с другим
-* цветом при наведении. Подробнее см. HTML. */
 .reviews-toggle-button:hover .reviews-toggle-arrow {
   display: none;
 }
@@ -96,9 +81,6 @@
 .reviews-toggle-button:hover .icon-hover {
   display: block;
 }
-
-/* Изменяем размер фото, чтобы на меньших размерах
-* экрана фото не стало уже, чем текст. */
 
 @media screen and (max-width: 1100px) {
   .reviews-photo {

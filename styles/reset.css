@@ -7,18 +7,11 @@
 }
 
 a {
-  /* Отключаем подчеркивание сразу всех
-   * ссылок на странице и отключаем синий
-   * цвет текста. 
-   * Делаем это с помощью наследования цвета
-   * из родительского элемента. */
   text-decoration: none;
   color: inherit;
 }
 
 a:visited {
-  /* Отключаем фиолетовый цвет текста для
-   * посещенных ссылок, также, как и выше. */
   text-decoration: none;
   color: inherit;
 }
@@ -26,9 +19,6 @@ a:visited {
 button,
 input,
 textarea {
-  /* Стиль outline появляется не во всех браузерах. 
-   * Но очень портит внешний вид, там,
-   * где он включен. Поэтому отключаем его. */
   outline: none;
   appearance: none;
 }
@@ -39,13 +29,10 @@ textarea:focus {
   outline: none;
 }
 
-/* Отключаем стандартное форматирование
-* для элементов внутри тега <details>. */
 details > summary {
   list-style: none;
 }
 
-/* Для Safari */
 details > summary::-webkit-details-marker {
   display: none;
 }
